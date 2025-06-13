@@ -1,6 +1,6 @@
 # Scene Language Support
 
-Provides syntax highlighting for `.scene` files used in rendering testcases during the computer graphics course.
+Provides syntax highlighting for `.scene` files used in rendering testcases during the computer graphics course. Note that `.scene` is used simply as an alternative to `.txt` to avoid conflicts with other extensions.
 
 ## Features
 

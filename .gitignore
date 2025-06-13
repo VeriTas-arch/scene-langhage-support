@@ -1,5 +1,6 @@
 node_modules/
 out/
+test/
 
 *.vsix
 package-lock.json

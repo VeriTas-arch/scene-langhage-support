@@ -30,11 +30,12 @@
                 "scopeName": "source.scene",
                 "path": "./syntaxes/scene.tmLanguage.json"
             }
-        ]
-    },
-    "configurationDefaults": {
-        "material-icon-theme.files.associations": {
-            "*.scene": "3d"
+        ],
+        "iconThemes": [],
+        "configurationDefaults": {
+            "material-icon-theme.files.associations": {
+                "*.scene": "3d"
+            }
         }
     }
 }

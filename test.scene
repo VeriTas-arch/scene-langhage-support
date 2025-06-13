@@ -22,122 +22,55 @@ Background {
 Materials {
     numMaterials 8
     Material {   // 镜面材料
-    type 0 1 0
-    specularColor 1 1 1
-    shininess 100
-}
+        type 0 1 0
+        specularColor 1 1 1
+        shininess 100
+    }
 
-Material {   // 透明材料
-type 0 0 1
-transparentColor 1 1 1
-refractiveIndex 1.5
-}
+    Material {   // 透明材料
+        type 0 0 1
+        transparentColor 1 1 1
+        refractiveIndex 1.5
+    }
 
-Material {
-    type 1 0 0
-    diffuseColor 0 0 1
-}
+    Material {
+        type 1 0 0
+        diffuseColor 0 0 1
+    }
 
-Material {
-    type 1 0 0
-    diffuseColor 1 1 1
-    specularColor 1 1 1
-    shininess 20
-}
+    Material {
+        type 1 0 0
+        diffuseColor 1 1 1
+        specularColor 1 1 1
+        shininess 20
+    }
 
-Material {  // 左墙 红色
-type 1 0 0
-diffuseColor 1 0 0
-}
+    Material {  // 左墙 红色
+        type 1 0 0
+        diffuseColor 1 0 0
+    }
 
-Material {  // 右墙 绿色
-type 1 0 0
-diffuseColor 0 1 0
-}
+    Material {  // 右墙 绿色
+        type 1 0 0
+        diffuseColor 0 1 0
+    }
 
-Material {  // 地面/天花板 米色
-type 1 0 0
-diffuseColor 0.96 0.87 0.70
-}
+    Material {  // 地面/天花板 米色
+        type 1 0 0
+        diffuseColor 0.96 0.87 0.70
+    }
 
-Material {  // 背景墙 白色
-type 1 0 0
-diffuseColor 0.85 0.8 0.65
-}
+    Material {  // 背景墙 白色
+        type 1 0 0
+        diffuseColor 0.85 0.8 0.65
+    }
 }
 
 Group {
     numObjects 12
     MaterialIndex 4
-    Sphere {   // 中央的红球
-    center 0 0 0
-    radius 1
-}
-
-MaterialIndex 5
-Sphere {   // 左下角的球
-center -2 -2 -2
-radius 1.2
-}
-
-MaterialIndex 0
-Sphere {   // 右上角的球
-center 2 -3 2
-radius 1.2
-}
-
-Sphere {   // 右下角的球
-center 2 2 -2
-radius 1.5
-}
-
-MaterialIndex 1
-Transform {  // 透明方块
-Translate -2.8 -2.8 0
-TriangleMesh {
-    obj_file mesh/cube.obj
-}
-}
-
-MaterialIndex 2
-Sphere {   // 左上角的球
-center -2 2 -2
-radius 1.2
-}
-
-MaterialIndex 6
-Plane {  // 地面 米色
-normal 0 1 0
-offset -10
-}
-
-MaterialIndex 6
-Plane {  // 天花板 米色
-normal 0 -1 0
-offset -10
-}
-
-MaterialIndex 5
-Plane {  // 右墙 绿色
-normal 1 0.01 0
-offset -8
-}
-
-MaterialIndex 4
-Plane {  // 左墙 红色
-normal -1 0.01 0
-offset -8
-}
-
-MaterialIndex 7
-Plane {  // 背景墙 深米
-normal 0 0.01 1
-offset -30
-}
-
-MaterialIndex 7
-Plane {  // 前墙 深米
-normal 0 0.01 -1
-offset -30
-}
+    Sphere {  // 求
+        center 0 0 0
+        radius 1
+    }
 }

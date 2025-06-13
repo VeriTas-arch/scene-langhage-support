@@ -14,7 +14,7 @@ It is recommended to add the following to your editor settings to enable file ic
 ```json
 {
   "material-icon-theme.files.associations": {
-    "*.scene": "scene"
+    "*.scene": "3d"
   }
 }
 ```

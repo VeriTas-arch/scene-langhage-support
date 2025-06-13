@@ -7,7 +7,7 @@
     "publisher": "ovolab-veritas",
     "repository": {
         "type": "git",
-        "url": "https://github.com/VeriTas-arch/scene-langhage-support"
+        "url": "https://github.com/VeriTas-arch/scene-language-support"
     },
     "license": "BSD 3-Clause",
     "engines": {

@@ -1,0 +1,26 @@
+{
+    "scopeName": "source.scene",
+    "name": "Scene Language",
+    "patterns": [
+        {
+            "name": "keyword.control.scene",
+            "match": "\\b(PerspectiveCamera|Lights|PointLight|Background|Materials|Material|Group|Sphere|Plane|Transform|Translate|TriangleMesh)\\b"
+        },
+        {
+            "name": "variable.parameter.scene",
+            "match": "\\b(center|direction|up|angle|width|height|position|color|numLights|numMaterials|type|diffuseColor|specularColor|shininess|transparentColor|refractiveIndex|numObjects|MaterialIndex|radius|normal|offset|obj_file)\\b"
+        },
+        {
+            "name": "comment.line.double-slash.scene",
+            "match": "//.*$"
+        },
+        {
+            "name": "constant.numeric.scene",
+            "match": "-?\\b\\d+(\\.\\d+)?\\b"
+        },
+        {
+            "name": "punctuation.braces.scene",
+            "match": "[{}]"
+        }
+    ]
+}

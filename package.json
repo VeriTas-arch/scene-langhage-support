@@ -1,0 +1,40 @@
+{
+    "name": "computer-graphics-testcases-highlighting",
+    "displayName": "Scene Language Support",
+    "description": "Syntax highlighting for .scene files used in rendering testcases of computer graphics.",
+    "version": "0.0.1",
+    "publisher": "ovolab-veritas",
+    "engines": {
+        "vscode": "^1.85.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "scene",
+                "aliases": [
+                    "Scene",
+                    "scene"
+                ],
+                "extensions": [
+                    ".scene"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "scene",
+                "scopeName": "source.scene",
+                "path": "./syntaxes/scene.tmLanguage.json"
+            }
+        ]
+    },
+    "configurationDefaults": {
+        "material-icon-theme.files.associations": {
+            "*.scene": "3d"
+        }
+    }
+}

@@ -9,7 +9,7 @@ Provides syntax highlighting for `.scene` files used in rendering testcases duri
 
 ## Usage
 
-It is recommended to add the following to your editor settings to enable file icon association in case the Material Icon Theme does not automatically recognize the `.scene` file extension:
+It is recommended to add the following to your editor `settings.json` to enable file icon association in case the Material Icon Theme does not automatically recognize the `.scene` file extension:
 
 ```json
 {

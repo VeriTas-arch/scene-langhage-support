@@ -2,7 +2,7 @@
 
 I may forget to update this...
 
-## [0.0.4] - 2025-06-13
+## [0.0.5] - 2025-06-13
 
 - Now formatting operations will add a newline before `MaterialIndex` declaration.
 

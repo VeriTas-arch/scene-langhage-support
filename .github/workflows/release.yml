@@ -20,7 +20,7 @@ jobs:
         node-version: 18.x
 
     - name: Install dependencies
-      run: xvfb-run -a npm test
+      run: npm ci
 
     - name: Install vsce
       run: npm install -g @vscode/vsce

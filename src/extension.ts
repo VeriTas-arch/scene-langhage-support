@@ -26,33 +26,41 @@ export function activate(context: vscode.ExtensionContext) {
             const topLevelKeywords = [
                 'Materials', 'Group', 'Lights', 'Background', 'PerspectiveCamera'
             ];
-            const materialBlockKeyword = 'Material';
+            // 二级块关键字
+            const subBlockKeywords = [
+                'Material', 'MaterialIndex'
+            ];
+            // 预留空格关键字
+            const preSpaceKeywords = [
+                'MaterialIndex'
+            ];
 
             let formattedLines: string[] = [];
             let indentLevel = 0;
             let blockStack: string[] = [];
             let lastLineWasTopLevelBlockEnd = false;
-            let lastLineWasMaterialBlockEnd = false;
+            let lastLineWasSubBlockEnd = false;
+            const materialIndexKeyword = 'MaterialIndex';
 
             for (let i = 0; i < lines.length; i++) {
                 let line = lines[i].trim();
                 if (line === '') continue;
 
-                // 只对去除注释后的部分判断块结构
                 const codePart = stripLineComment(line).trim();
 
                 // 判断块起始
                 const isTopLevelBlockStart = topLevelKeywords.some(keyword => codePart.startsWith(keyword + ' {'));
-                const isMaterialBlockStart = codePart.startsWith(materialBlockKeyword + ' {');
+                // 判断是否为二级块起始
+                const isSubBlockStart = subBlockKeywords.some(keyword => codePart.startsWith(keyword + ' {'));
 
                 // 判断块结尾
                 const isBlockEnd = codePart === '}';
 
-                // 判断是否为Material块结尾
-                const isMaterialBlockEnd =
+                // 判断是否为二级块结尾
+                const isSubBlockEnd =
                     isBlockEnd &&
                     blockStack.length > 0 &&
-                    blockStack[blockStack.length - 1] === materialBlockKeyword;
+                    subBlockKeywords.includes(blockStack[blockStack.length - 1]);
 
                 // 判断是否为顶级块结尾
                 const isTopLevelBlockEnd =
@@ -69,12 +77,22 @@ export function activate(context: vscode.ExtensionContext) {
                     formattedLines.push('');
                 }
 
-                // Material块之间插入空行（仅在Materials块内）
+                // 二级块之间插入空行（仅在父块内）
                 if (
                     formattedLines.length > 0 &&
-                    lastLineWasMaterialBlockEnd &&
-                    isMaterialBlockStart &&
-                    blockStack.includes('Materials')
+                    lastLineWasSubBlockEnd &&
+                    isSubBlockStart &&
+                    blockStack.length > 0 // 确保在某个父块内
+                ) {
+                    formattedLines.push('');
+                }
+
+                // MaterialIndex前插入空行（如果上一行不是空行或块起始）
+                if (
+                    codePart.startsWith(materialIndexKeyword) &&
+                    formattedLines.length > 0 &&
+                    formattedLines[formattedLines.length - 1].trim() !== '' &&
+                    !formattedLines[formattedLines.length - 1].trim().endsWith('{')
                 ) {
                     formattedLines.push('');
                 }
@@ -94,8 +112,8 @@ export function activate(context: vscode.ExtensionContext) {
                 if (codePart.endsWith('{')) {
                     if (isTopLevelBlockStart) {
                         blockStack.push(topLevelKeywords.find(keyword => codePart.startsWith(keyword + ' {'))!);
-                    } else if (isMaterialBlockStart) {
-                        blockStack.push(materialBlockKeyword);
+                    } else if (isSubBlockStart) {
+                        blockStack.push(subBlockKeywords.find(keyword => codePart.startsWith(keyword + ' {'))!);
                     } else {
                         blockStack.push('BLOCK');
                     }
@@ -103,7 +121,7 @@ export function activate(context: vscode.ExtensionContext) {
                 }
 
                 lastLineWasTopLevelBlockEnd = isTopLevelBlockEnd;
-                lastLineWasMaterialBlockEnd = isMaterialBlockEnd && blockStack.includes('Materials');
+                lastLineWasSubBlockEnd = isSubBlockEnd && blockStack.length > 0;
             }
 
             // 文件结尾加一个空行

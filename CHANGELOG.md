@@ -2,6 +2,10 @@
 
 I may forget to update this...
 
+## [0.0.4] - 2025-06-13
+
+- Now formatting operations will add a newline before `MaterialIndex` declaration.
+
 ## [0.0.3] - 2025-06-13
 
 - Adds more syntax highlighting for `.scene` files.

@@ -54,7 +54,7 @@
                 "sceneFormatter.useTabs": {
                     "type": "boolean",
                     "default": false,
-                    "description": "是否使用制表符(tab)进行缩进"
+                    "description": "是否使用制表符 (tab) 进行缩进"
                 }
             }
         }

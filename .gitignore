@@ -3,4 +3,3 @@ out/
 test/
 
 *.vsix
-package-lock.json

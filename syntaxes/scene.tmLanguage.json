@@ -4,7 +4,7 @@
     "patterns": [
         {
             "name": "keyword.control.scene",
-            "match": "\\b(PerspectiveCamera|Lights|PointLight|Background|Materials|Material|Group|Sphere|Plane|Transform|Translate|TriangleMesh)\\b"
+            "match": "\\b(PerspectiveCamera|Lights|PointLight|DirectionalLight|Background|Materials|PhongMaterial|Material|Group|Sphere|Plane|Transform|Translate|TriangleMesh)\\b"
         },
         {
             "name": "variable.parameter.scene",

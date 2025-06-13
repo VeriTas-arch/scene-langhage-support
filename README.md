@@ -5,7 +5,19 @@ Provides syntax highlighting for `.scene` files used in rendering testcases duri
 ## Features
 
 - Highlights camera, light, material, and geometry descriptions.
-- Works well with [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+- Supports basic format operations.
+
+## Usage
+
+It is recommended to add the following to your editor settings to enable file icon association in case the Material Icon Theme does not automatically recognize the `.scene` file extension:
+
+```json
+{
+  "material-icon-theme.files.associations": {
+    "*.scene": "scene"
+  }
+}
+```
 
 ## File extension
 

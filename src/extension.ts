@@ -28,11 +28,7 @@ export function activate(context: vscode.ExtensionContext) {
             ];
             // 二级块关键字
             const subBlockKeywords = [
-                'Material', 'MaterialIndex'
-            ];
-            // 预留空格关键字
-            const preSpaceKeywords = [
-                'MaterialIndex'
+                'Material', 'MaterialIndex', 'PhongMaterial'
             ];
 
             let formattedLines: string[] = [];

@@ -8,7 +8,7 @@
         },
         {
             "name": "variable.parameter.scene",
-            "match": "\\b(center|direction|up|angle|width|height|position|color|numLights|numMaterials|type|diffuseColor|specularColor|shininess|transparentColor|refractiveIndex|numObjects|MaterialIndex|radius|normal|offset|obj_file)\\b"
+            "match": "\\b(center|direction|up|angle|width|height|position|emission|refr|color|numLights|numMaterials|type|diffuseColor|specularColor|shininess|transparentColor|refractiveIndex|numObjects|MaterialIndex|radius|normal|offset|obj_file)\\b"
         },
         {
             "name": "comment.line.double-slash.scene",

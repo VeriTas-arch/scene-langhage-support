@@ -4,11 +4,11 @@
     "patterns": [
         {
             "name": "keyword.control.scene",
-            "match": "\\b(PerspectiveCamera|Lights|PointLight|DirectionalLight|Background|Materials|PhongMaterial|Material|Group|Sphere|Plane|Transform|Translate|Scale|XRotate|YRotate|ZRotate|TriangleMesh)\\b"
+            "match": "\\b(PerspectiveCamera|Lights|\\w*Light|Background|Materials|\\w*Material|Group|Sphere|Plane|Triangle|Transform|Translate|Scale|UniformScale|XRotate|YRotate|ZRotate|TriangleMesh)\\b"
         },
         {
             "name": "variable.parameter.scene",
-            "match": "\\b(center|direction|up|angle|width|height|position|emission|refr|color|numLights|numMaterials|type|diffuseColor|specularColor|shininess|transparentColor|refractiveIndex|numObjects|MaterialIndex|radius|normal|offset|obj_file)\\b"
+            "match": "\\b(center|direction|up|angle|width|height|position|emission|refr|color|albedo|roughness|metallic|ior|numLights|numMaterials|type|\\w*Color|shininess|refractiveIndex|numObjects|MaterialIndex|radius|normal|v0|v1|v2|offset|obj_file)\\b"
         },
         {
             "name": "comment.line.double-slash.scene",

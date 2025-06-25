@@ -2,9 +2,17 @@
 
 I may forget to update...
 
-## [0.0.9] - 2025-06-25
+## [0.2.0] - 2025-06-25
+
+- Adds more hovering operations for `.scene` files.
+  - Now hovering over `MaterialIndex` will show the material name.
+  - Now ctrl + clicking on `MaterialIndex` will jump to the material definition.
+- Spilit the `extension.ts` file into multiple files for better maintainability.
+
+## [0.1.0] - 2025-06-25
 
 - Some small patches to improve the highlighting and formatting keywords.
+- Now supports autofix for number of objects, lights, and materials in the scene, namely `numObjects`, `numLights`, and `numMaterials`.
 
 ## [0.0.6] - 2025-06-15
 

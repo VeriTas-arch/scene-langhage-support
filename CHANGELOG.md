@@ -1,6 +1,10 @@
 # Change Log
 
-I may forget to update this...
+I may forget to update...
+
+## [0.0.9] - 2025-06-25
+
+- Some small patches to improve the highlighting and formatting keywords.
 
 ## [0.0.6] - 2025-06-15
 

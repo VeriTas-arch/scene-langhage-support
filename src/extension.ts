@@ -28,7 +28,7 @@ export function activate(context: vscode.ExtensionContext) {
             ];
             // 二级块关键字
             const subBlockKeywords = [
-                'Material', 'MaterialIndex', 'PhongMaterial'
+                'Material', 'MaterialIndex', 'PhongMaterial', 'LambertianMaterial', 'CookTorranceMaterial'
             ];
 
             let formattedLines: string[] = [];

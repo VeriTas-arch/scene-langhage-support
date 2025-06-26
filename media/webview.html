@@ -30,7 +30,6 @@
 <body>
     <div id="container"></div>
     <script src="js/three.min.js"></script>
-    <script src="js/OrbitControls.bundle.js"></script>
     <script>
         // 直接用全局 THREE 绘制红色正方体
         const container = document.getElementById('container');
@@ -40,12 +39,46 @@
         const geometry = new THREE.BoxGeometry(2, 2, 2);
         const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
         const cube = new THREE.Mesh(geometry, material);
+        // 添加立方体边框
+        const edges = new THREE.EdgesGeometry(geometry);
+        const line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0x000000, linewidth: 2 }));
+        cube.add(line);
         scene.add(cube);
         const renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(container.clientWidth, container.clientHeight);
         renderer.setPixelRatio(window.devicePixelRatio);
         container.appendChild(renderer.domElement);
-        renderer.render(scene, camera);
+        // 鼠标拖拽旋转立方体（无需 OrbitControls）
+        let isDragging = false;
+        let lastX = 0, lastY = 0;
+        renderer.domElement.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            lastX = e.clientX;
+            lastY = e.clientY;
+        });
+        renderer.domElement.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            const dx = e.clientX - lastX;
+            const dy = e.clientY - lastY;
+            cube.rotation.y += dx * 0.01;
+            cube.rotation.x += dy * 0.01;
+            lastX = e.clientX;
+            lastY = e.clientY;
+        });
+        renderer.domElement.addEventListener('mouseup', () => { isDragging = false; });
+        renderer.domElement.addEventListener('mouseleave', () => { isDragging = false; });
+        // 动画循环渲染
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+        animate();
+        // 响应窗口大小变化
+        window.addEventListener('resize', () => {
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        });
     </script>
 </body>
 

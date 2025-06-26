@@ -57,11 +57,30 @@
                     "description": "是否使用制表符 (tab) 进行缩进"
                 }
             }
+        },
+        "commands": [
+            {
+                "command": "sceneLanguageSupport.preview3D",
+                "title": "3D 预览当前 Scene 文件",
+                "icon": "$(open-preview)"
+            }
+        ],
+        "menus": {
+            "editor/title": [
+                {
+                    "command": "sceneLanguageSupport.preview3D",
+                    "when": "resourceLangId == scene",
+                    "group": "navigation"
+                }
+            ]
         }
     },
     "devDependencies": {
+        "@types/node": "^24.0.4",
+        "@types/vscode": "^1.101.0",
+        "three": "^0.177.0",
         "typescript": "^5.8.3",
-        "vscode": "^1.1.34"
+        "vite": "^7.0.0"
     },
     "main": "./out/extension.js",
     "scripts": {

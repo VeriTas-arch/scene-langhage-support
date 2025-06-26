@@ -4,6 +4,7 @@ import { NumObjectsCodeActionProvider } from './codeActions';
 import { registerDiagnostics } from './diagnostics';
 import { SceneMaterialHoverProvider } from './hover';
 import { SceneMaterialDefinitionProvider } from './definition';
+import { registerPreview3DCommand } from './preview3d';
 
 let diagnosticCollection: vscode.DiagnosticCollection;
 
@@ -155,4 +156,6 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.languages.registerDefinitionProvider('scene', new SceneMaterialDefinitionProvider())
     );
     diagnosticCollection = registerDiagnostics(context, updateDiagnostics);
+    // 注册 3D 预览命令
+    registerPreview3DCommand(context);
 }

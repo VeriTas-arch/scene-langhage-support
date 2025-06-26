@@ -1,5 +1,8 @@
 # Scene Language Support
 
+![VS Code Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/ovolab-veritas.computer-graphics-testcases-highlighting)
+![License](https://img.shields.io/github/license/VeriTas-arch/scene-language-support)
+
 Provides syntax highlighting for `.scene` files used in rendering testcases during the computer graphics course. Note that `.scene` is used simply as an alternative to `.txt` to avoid conflicts with other extensions.
 
 ## Features

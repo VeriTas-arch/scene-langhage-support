@@ -6,12 +6,11 @@ export class SceneMaterialHoverProvider implements vscode.HoverProvider {
         if (!wordRange) return;
         const word = document.getText(wordRange);
         const line = document.lineAt(position.line).text;
-
+        // ...existing code from hover.ts...
         // 1. 悬停在 MaterialIndex N 上，显示对应 Material 定义
         const matIdxMatch = line.match(/MaterialIndex\s+(\d+)/);
         if (word === 'MaterialIndex' && matIdxMatch) {
             const idx = parseInt(matIdxMatch[1], 10);
-            // 找到 Materials 块
             let matStart = -1, matEnd = -1, depth = 0;
             for (let i = 0; i < document.lineCount; i++) {
                 if (/^\s*Materials\s*\{/.test(document.lineAt(i).text)) {
@@ -30,7 +29,6 @@ export class SceneMaterialHoverProvider implements vscode.HoverProvider {
                 }
             }
             if (matEnd === -1) return;
-            // 收集所有 Material 块
             let matIdx = -1;
             for (let i = matStart + 1; i < matEnd; i++) {
                 const text = document.lineAt(i).text;
@@ -38,7 +36,6 @@ export class SceneMaterialHoverProvider implements vscode.HoverProvider {
                 if (/^\s*\w*Material\s*\{/.test(text)) {
                     matIdx++;
                     if (matIdx === idx) {
-                        // 收集该 Material 块内容
                         let matLines = [document.lineAt(i).text];
                         let d = 0;
                         for (let j = i; j < matEnd; j++) {
@@ -53,10 +50,8 @@ export class SceneMaterialHoverProvider implements vscode.HoverProvider {
                 }
             }
         }
-
         // 2. 悬停在 Material 定义上，显示所有引用该 index 的 MaterialIndex
         if (/\w*Material/.test(word) && /\w*Material\s*\{/.test(line)) {
-            // 找到 Materials 块和当前 Material 的 index
             let matStart = -1, matEnd = -1, depth = 0, matIdx = -1, thisMatIdx = -1;
             for (let i = 0; i < document.lineCount; i++) {
                 if (/^\s*Materials\s*\{/.test(document.lineAt(i).text)) {
@@ -87,7 +82,6 @@ export class SceneMaterialHoverProvider implements vscode.HoverProvider {
                 }
             }
             if (thisMatIdx === -1) return;
-            // 在 Group 块中查找所有 MaterialIndex thisMatIdx
             let usages: number[] = [];
             for (let i = 0; i < document.lineCount; i++) {
                 const text = document.lineAt(i).text;

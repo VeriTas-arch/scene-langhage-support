@@ -2,9 +2,11 @@ import * as vscode from 'vscode';
 import { formatter } from './formatting';
 import { NumObjectsCodeActionProvider } from './codeActions';
 import { registerDiagnostics } from './diagnostics';
-import { SceneMaterialHoverProvider } from './hover';
-import { SceneMaterialDefinitionProvider } from './definition';
 import { registerPreview3DCommand } from './preview3d';
+import { SceneMaterialHoverProvider } from './material/materialHoverProvider';
+import { SceneMaterialDefinitionProvider } from './material/materialDefinitionProvider';
+import { SceneTextureHoverProvider } from './texture/textureHoverProvider';
+import { SceneColorProvider } from './colorProvider';
 
 let diagnosticCollection: vscode.DiagnosticCollection;
 
@@ -153,7 +155,13 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.languages.registerHoverProvider('scene', new SceneMaterialHoverProvider())
     );
     context.subscriptions.push(
+        vscode.languages.registerHoverProvider('scene', new SceneTextureHoverProvider())
+    );
+    context.subscriptions.push(
         vscode.languages.registerDefinitionProvider('scene', new SceneMaterialDefinitionProvider())
+    );
+    context.subscriptions.push(
+        vscode.languages.registerColorProvider('scene', new SceneColorProvider())
     );
     diagnosticCollection = registerDiagnostics(context, updateDiagnostics);
     // 注册 3D 预览命令

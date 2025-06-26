@@ -2,6 +2,12 @@
 
 I may forget to update...
 
+## [0.2.4] - 2025-06-26
+
+- Test the preview icon for `.scene` files in the file explorer.
+- Supports GUI editing for colors in `.scene` files.
+- Now hovering over texture paths will show the image preview.
+
 ## [0.2.0] - 2025-06-25
 
 - Adds more hovering operations for `.scene` files.

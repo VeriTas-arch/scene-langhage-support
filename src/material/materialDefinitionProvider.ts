@@ -4,6 +4,8 @@ export class SceneMaterialDefinitionProvider implements vscode.DefinitionProvide
     provideDefinition(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken): vscode.ProviderResult<vscode.Definition> {
         const wordRange = document.getWordRangeAtPosition(position, /MaterialIndex/);
         if (!wordRange) return;
+        const word = document.getText(wordRange);
+        if (word !== 'MaterialIndex') return;
         const line = document.lineAt(position.line).text;
         const matIdxMatch = line.match(/MaterialIndex\s+(\d+)/);
         if (!matIdxMatch) return;

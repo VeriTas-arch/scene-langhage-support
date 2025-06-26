@@ -3,12 +3,16 @@
     "name": "Scene Language",
     "patterns": [
         {
+            "name": "entity.name.function.scene",
+            "match": "\\b(MaterialIndex)\\b"
+        },
+        {
             "name": "keyword.control.scene",
             "match": "\\b(PerspectiveCamera|Lights|\\w*Light|Background|Materials|\\w*Material|Group|Sphere|Plane|Triangle|Transform|Translate|Scale|UniformScale|XRotate|YRotate|ZRotate|TriangleMesh)\\b"
         },
         {
             "name": "variable.parameter.scene",
-            "match": "\\b(center|direction|up|angle|width|height|position|emission|refr|texture|color|albedo|roughness|metallic|ior|numLights|numMaterials|type|\\w*Color|shininess|refractiveIndex|numObjects|MaterialIndex|radius|normal|v0|v1|v2|offset|obj_file)\\b"
+            "match": "\\b(center|direction|up|angle|width|height|position|emission|refr|texture|color|albedo|roughness|metallic|ior|numLights|numMaterials|type|\\w*Color|shininess|refractiveIndex|numObjects|radius|normal|v0|v1|v2|offset|obj_file)\\b"
         },
         {
             "name": "comment.line.double-slash.scene",
@@ -21,6 +25,7 @@
         {
             "name": "punctuation.braces.scene",
             "match": "[{}]"
-        }
+        },
+        { "include": "#texture-path" }
     ]
 }

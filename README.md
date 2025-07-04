@@ -33,4 +33,4 @@ It is recommended to add the following to your editor `settings.json` to enable 
 
 ## Example
 
-![showcase](./image/showcase.gif)
+![showcase](https://raw.githubusercontent.com/VeriTas-arch/scene-language-support/main/media/showcase.gif)

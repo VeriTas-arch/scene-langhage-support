@@ -6,7 +6,6 @@ export class SceneMaterialHoverProvider implements vscode.HoverProvider {
         if (!wordRange) return;
         const word = document.getText(wordRange);
         const line = document.lineAt(position.line).text;
-        // ...existing code from hover.ts...
         // 1. 悬停在 MaterialIndex N 上，显示对应 Material 定义
         const matIdxMatch = line.match(/MaterialIndex\s+(\d+)/);
         if (word === 'MaterialIndex' && matIdxMatch) {

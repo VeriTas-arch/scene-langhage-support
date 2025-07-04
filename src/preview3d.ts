@@ -22,10 +22,6 @@ export function registerPreview3DCommand(context: vscode.ExtensionContext) {
                 vscode.Uri.joinPath(context.extensionUri, 'media', 'js', 'three.min.js')
             );
             html = html.replace('src="js/three.min.js"', `src="${threeUri}"`);
-            // 自动解析 scene 文件内容，提取 camera/group/materials 信息
-            // 注入到 webview
-            // html = html.replace('window.__SCENE_PARSED__ = undefined;', `window.__SCENE_PARSED__ = ${JSON.stringify(parsedScene)};`);
-            // panel.webview.html = html;
             panel.webview.html = html;
         })
     );

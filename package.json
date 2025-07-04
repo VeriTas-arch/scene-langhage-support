@@ -2,7 +2,7 @@
     "name": "computer-graphics-testcases-highlighting",
     "displayName": "Scene Language Support",
     "description": "Syntax highlighting for .scene files used in rendering testcases of computer graphics.",
-    "version": "0.2.4",
+    "version": "0.2.5",
     "icon": "image/icon.png",
     "publisher": "ovolab-veritas",
     "repository": {
@@ -89,8 +89,7 @@
     "scripts": {
         "build": "tsc",
         "build:three": "vite build",
-        "copy-orbitcontrols": "npx copyfiles -u 4 node_modules/three/examples/jsm/controls/OrbitControls.js media/jsm/",
-        "build:3d": "npm run copy-orbitcontrols && npm run build:three"
+        "build:3d": "npm run build:three"
     },
     "dependencies": {
         "@types/glob": "^7.2.0",

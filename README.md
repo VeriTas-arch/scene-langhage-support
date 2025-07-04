@@ -33,11 +33,4 @@ It is recommended to add the following to your editor `settings.json` to enable 
 
 ## Example
 
-```scene
-PerspectiveCamera {
-    center 0 0 25
-    direction 0.02 0.02 -1
-    up 0 1 0
-    angle 30
-}
-```
+![showcase](./image/showcase.gif)

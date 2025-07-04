@@ -2,4 +2,13 @@
 .vscode-test/**
 .gitignore
 
+# dev dependencies
+.github/**
+vite.config.js
+tsconfig.json
+
+# media assets
 media/showcase.gif
+
+# test files
+test/**

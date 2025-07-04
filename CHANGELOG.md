@@ -13,7 +13,7 @@ I may forget to update...
 - Adds more hovering operations for `.scene` files.
   - Now hovering over `MaterialIndex` will show the material name.
   - Now ctrl + clicking on `MaterialIndex` will jump to the material definition.
-- Spilit the `extension.ts` file into multiple files for better maintainability.
+- Split the `extension.ts` file into multiple files for better maintainability.
 
 ## [0.1.0] - 2025-06-25
 

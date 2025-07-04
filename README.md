@@ -10,7 +10,7 @@ Provides syntax highlighting for `.scene` files used in rendering testcases duri
 - Highlights camera, light, material, and geometry descriptions.
 - Supports basic format operations.
 - Auto fix for number of objects, lights, and materials in the scene.
-- Hovering over `MaterialIndex` shows the materiFal name.
+- Hovering over `MaterialIndex` shows the material name.
 - Ctrl + clicking on `MaterialIndex` jumps to the material definition.
 - Supports GUI editing for colors in `.scene` files, allowing you to click on color values to open a color picker.
 - As a small bonus, a preview icon is provided for `.scene` files in the file explorer (or is it?).

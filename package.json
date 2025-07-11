@@ -2,7 +2,7 @@
     "name": "computer-graphics-testcases-highlighting",
     "displayName": "Scene Language Support",
     "description": "Syntax highlighting for .scene files used in rendering testcases of computer graphics.",
-    "version": "0.2.8",
+    "version": "0.2.9",
     "icon": "image/icon.png",
     "publisher": "ovolab-veritas",
     "repository": {
